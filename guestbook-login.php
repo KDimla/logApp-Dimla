@@ -1,30 +1,19 @@
 <?php
- require('config/config.php');
+require('config/config.php');
   require('config/db.php');
-  
+
   if(isset($_POST['submit'])){
-    
-    if ( !empty($_POST['username']) && !empty($_POST['password'])) {
-
-      $userN = $_POST['username'];
-      $passW = $_POST['password'];
-      $result= $conn->query("SELECT * FROM account WHERE username='$userN' AND password='$passW'"); 
-
-      $row= $result ->Fetch_array();
-      $loginCheck= $result-> num_rows;
-  
-      if($loginCheck> 0)
-      {
-        header("Location: guestbook-list.php");
-      }
-  
-      else
-      {
-       echo "Invalid Username or Password <br> Please try again!";
-      }
+    $username=mysqli_real_escape_string($conn,$_POST['username']);
+    $password=mysqli_real_escape_string($conn,$_POST['password']);
+    $query = "SELECT * FROM account WHERE username ='$username' and password ='$password';";
+    $result = mysqli_query($conn, $query);
+    $count= mysqli_num_rows($result);   
+    if($count>0){
+      header('Location: guestbook-list.php');
+    }else {
+      echo 'ERROR: Wrong Username/Password';
+    }
   }
-  }
-
 ?>
 <?php include('inc/header.php'); ?>
   <br/>
