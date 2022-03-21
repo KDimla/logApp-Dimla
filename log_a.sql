@@ -40,9 +40,9 @@ CREATE TABLE IF NOT EXISTS `account` (
 --
 
 INSERT INTO `account` (`id`, `username`, `password`) VALUES
-(1, 'jay', '12345678'),
-(2, 'dan', 'babynimauie'),
-(3, 'elmer', 'elmercute');
+(1, 'kurt', '123'),
+(2, 'lou', 'lollipop'),
+(3, 'judy', 'judycute');
 
 -- --------------------------------------------------------
 
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS `person` (
 --
 
 INSERT INTO `person` (`pid`, `lastname`, `firstname`, `address`, `logdt`) VALUES
-(3, 'Bautista', 'Jayrah', 'Brgy. Maunlad', '2022-03-07 19:14:33.000000'),
-(4, 'Duenas', 'Dan Mauie', 'Bancao Bancao', '2022-03-07 19:14:47.000000'),
-(5, 'Rubio', 'Elmer', 'Tagburos', '2022-03-07 19:15:02.000000');
+(3, 'Dimla', 'Kurt', 'Brgy. Sta.Monica', '2022-03-07 19:14:33.000000'),
+(4, 'Encinas', 'Jonny Lou', 'San Pedro', '2022-03-07 19:14:47.000000'),
+(5, 'Velasco', 'Judy  Mea', 'San Manuel', '2022-03-07 19:15:02.000000');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
